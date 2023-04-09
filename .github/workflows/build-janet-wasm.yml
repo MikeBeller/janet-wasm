@@ -11,9 +11,12 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: wget https://github.com/janet-lang/janet/releases/download/v1.27.0/janet.c
+      - run: wget https://github.com/janet-lang/janet/releases/download/v1.27.0/janet.h
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Hello docker world
+        run: docker run hello-world
       - run: echo "🍏 This job's status is ${{ job.status }}."
  
